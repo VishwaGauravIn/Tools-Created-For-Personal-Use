@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Counter</title>
+    <style>
+        .my-button{
+            color: rgba(0, 0, 0, 0.685);
+            font-family: serif;
+            font-family: sans-serif;
+            border-width: 0px;
+            /* border-style: hidden; */
+            border-radius: 7px;
+            font-size: 30px;
+            background-color: transparent;
+            border-width: 2px;
+            border-color: tomato;
+            animation: step-end;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin: 10px;
+        }
+        .my-button:hover{
+            color: white;
+            background-color: tomato;
+        }
+        .basic-btn{
+            background-color: transparent;
+        }
+        .basic-btn:hover{
+            color: whitesmoke;
+            background-color: black;
+        }
+    </style>
+    <script>
+        var x = 0;
+        var lap = 0;
+        function submit(){
+            x++;
+            document.getElementById("counter").textContent = "Click Counter: "+x;
+            
+        }
+        function reset(){
+            x = 0;
+            lap = 0;
+            document.getElementById("counter").textContent = "Click the button Below";
+            document.getElementById("lap").textContent = "";
+        }
+        function lapCount(){
+            lap = lap +","+x;
+            document.getElementById("lap").textContent = lap;
+        }
+    </script>
+</head>
+<body>
+<center>
+    <h3 id="counter">Click the button Below</h3>
+    <input type="button" class="my-button" value="Click Me !" onclick="submit()"><br>
+    <input type="button" onclick="lapCount()" value="Lap" class="basic-btn">
+    <input type="button" onclick="reset()" value="Reset" class="basic-btn"><br>
+    Last Lap: <p1 id="lap"></p1>
+</center>
+</body>
+</html>
